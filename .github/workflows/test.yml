@@ -34,3 +34,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      - name: Discord Notification
+        uses: Ilshidur/action-discord@0.3.0
+        env:
+            DISCORD_WEBHOOK: https://discord.com/api/webhooks/${{ secrets.DISCORD_WEBHOOK_ID }}/${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+            DISCORD_USERNAME: Github Actions
+        with:
+            args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
