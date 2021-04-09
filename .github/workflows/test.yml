@@ -40,5 +40,3 @@ jobs:
         env:
             DISCORD_WEBHOOK: https://discord.com/api/webhooks/${{ secrets.DISCORD_WEBHOOK_ID }}/${{ secrets.DISCORD_WEBHOOK_TOKEN }}
             DISCORD_USERNAME: Github Actions
-        with:
-            args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
